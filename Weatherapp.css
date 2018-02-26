@@ -1,0 +1,22 @@
+h1, h2, h3,{
+    margin:0;
+  }
+  h1{
+    font-size: 16rem;  
+  }
+  h2{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 1.4rem;
+  }
+  .container{
+    max-width:800px;
+    height:100vh;
+    
+    margin:0 auto;
+    display:grid;
+    grid-template-rows:20% 80%;
+    text-align:center;
+    padding:25px 5px;
+  }
