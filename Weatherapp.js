@@ -34,26 +34,22 @@ function getWeather(lat,lon) {
         $("#temperature").html(temperature + "°");
         $("#description").html(description);
         $("#icon").attr('src',icon);
-        temperatureInCelsius = temperature;
-        temperatureInFahrenheit = Math.round(temperature * 9 / 5 + 32);
-        changeTemperatureUnit(temperatureInCelsius,temperatureInFahrenheit);
+       temperatureInCelsius = temperature;
+       temperatureInFahrenheit = Math.round(temperature * 9 / 5 + 32);        changeTemperatureUnit(temperatureInCelsius,temperatureInFahrenheit);
     }
   });
 }
 //Convert Celsius to Fahrenheit
-
-function changeTemperatureUnit(temperatureInCelsius,temperatureInFahrenheit) {
-  //var temperatureInFahrenheit = Math.round(temperatureInCelsius * 9 / 5 + 32);
-  var temperatureUnit = document.getElementById("temperatureUnit");
-  if(temperatureUnit.innerHTML === temperatureInCelsius) {
-    temperatureUnit.innerHTML = temperatureInFahrenheit;
-    }   else {
-        temperatureUnit.innerHTML = temperatureInCelsius;
-   }
- 
+function changeTemperatureUnit(temperatureInCelsius,temperatureInFahrenheit){
+$("#temperatureUnit").click(function(){
+  var currentTemperatureUnit = $("#temperatureUnit").html();
+  var changedTemperatureUnit = currentTemperatureUnit == 'C' ? 'F' : 'C';
+    $("#temperatureUnit").html(changedTemperatureUnit);
+      if(
+        changedTemperatureUnit == 'F')
+        $("#temperature").html(temperatureInFahrenheit + "°");
+        else{
+           $("#temperature").html(temperatureInCelsius + "°");
+     }
+  })
 }
-    $("button").click(function(){
-   $(this).text($(this).text() == 'C' ? 'F' : 'C');
-      $("h1").text(temperatureInFahrenheit + "°");
-      
-  });
