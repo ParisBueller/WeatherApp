@@ -53,3 +53,4 @@ $("#temperatureUnit").click(function(){
      }
   })
 }
+  
